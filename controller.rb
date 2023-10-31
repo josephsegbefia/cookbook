@@ -1,7 +1,7 @@
 require_relative 'task'
 
 class Controller
-  def initialize(view)
+  def initialize(view, repository)
     @view = view
     @repository = repository
   end
