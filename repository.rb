@@ -14,4 +14,8 @@ class Repository
   def find(index)
     @tasks[index]
   end
+
+  def destroy(index)
+    @tasks.delete_at(index)
+  end
 end

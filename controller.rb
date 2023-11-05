@@ -31,6 +31,13 @@ class Controller
     task = @repository.find(index)
     # 3. Mark task as complete
     task.mark_as_complete
+  end
 
+  def delete_task
+    tasks = @repository.all
+    @view.list_tasks(tasks)
+
+    index = @view.ask_for_task_index
+    @repository.destroy(index)
   end
 end
