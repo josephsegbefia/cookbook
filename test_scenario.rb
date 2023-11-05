@@ -1,13 +1,13 @@
 require_relative 'task'
 require_relative 'repository'
+require_relative 'controller'
+require_relative 'view'
 
-repo = Repository.new
-task1 = Task.new('walk the dog')
-task2 = Task.new("Wash the dishes")
+repository = Repository.new
+view = View.new
+controller = Controller.new(view, repository)
 
-repo.add(task1)
+controller.add_task
+controller.add_task
 
-
-p task1
-p task2
-p repo
+p repository

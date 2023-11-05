@@ -3,7 +3,6 @@ class Repository
     @tasks = []
   end
 
-
   def add(task)
     @tasks << task
   end
