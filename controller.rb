@@ -5,6 +5,7 @@ class Controller
     @view = view
     @repository = repository
   end
+
   def add_task
     # Ask user for task
     # Take user's input
@@ -16,10 +17,20 @@ class Controller
   end
 
   def list_tasks
-
+    # 1. Ask repo for all tasks
+    tasks = @repository.all
+    # 2. Ask view to print tasks
+    @view.list_tasks(tasks)
   end
 
+  def mark_task_as_complete
 
-  def mark_task_as_done
+    # 1. Ask user for index of completed task
+    index = @view.ask_for_task_index
+    # 2. Ask the repo for task instance at index
+    task = @repository.find(index)
+    # 3. Mark task as complete
+    task.mark_as_complete
+
   end
 end
